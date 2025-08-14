@@ -13,7 +13,6 @@ function CV() {
   return (
     <section className="cv-section" style={{maxWidth: 800, margin: '3em auto 2em auto', background: '#f4f6f3', borderRadius: '1.2em', boxShadow: '0 2px 12px 0 #b7c8b544', padding: 0, overflow: 'hidden', minHeight: '60vh', position: 'relative'}}>
       <div style={{padding: '2.5em 2em 0 2em'}}>
-        <LangSwitch lang={lang} setLang={setLang} />
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: 600, margin: '0 auto 2.2em auto'}}>
           <h1 style={{color: 'var(--accent-green)', fontWeight: 700, fontSize: '2em', margin: 0}}>
             {lang === 'no' ? 'CV' : 'CV'}

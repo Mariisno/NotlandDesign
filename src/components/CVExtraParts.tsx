@@ -53,7 +53,7 @@ export function CVTabNav({ tab, setTab, lang }: { tab: string, setTab: (t: strin
     <nav className="cv-tabs" style={{margin: '0 auto 1.5em auto', maxWidth: 600, position: 'relative', top: 0, zIndex: 10}}>
       <button className={tab === 'experience' ? 'cv-tab active' : 'cv-tab'} onClick={() => setTab('experience')}>{lang === 'no' ? 'Erfaring' : 'Experience'}</button>
       <button className={tab === 'education' ? 'cv-tab active' : 'cv-tab'} onClick={() => setTab('education')}>{lang === 'no' ? 'Utdanning' : 'Education'}</button>
-      <button className={tab === 'positions' ? 'cv-tab active' : 'cv-tab'} onClick={() => setTab('positions')}>{lang === 'no' ? 'Verv' : 'Positions'}</button>
+  <button className={tab === 'positions' ? 'cv-tab active' : 'cv-tab'} onClick={() => setTab('positions')}>{lang === 'no' ? 'Verv' : 'Positions'}</button>
       <button className={tab === 'skills' ? 'cv-tab active' : 'cv-tab'} onClick={() => setTab('skills')}>{lang === 'no' ? 'Ferdigheter/Verktøy' : 'Skills/Tools'}</button>
     </nav>
   );
