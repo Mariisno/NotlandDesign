@@ -23,7 +23,36 @@ function Layout() {
     <LanguageContext.Provider value={{ lang, setLang }}>
       <header className="header header-bar">
         <div className="header-content">
-          <h1 className="logo-title">NotlandDesign</h1>
+          <h1
+            className="logo-title"
+            style={{cursor: 'pointer', userSelect: 'none', margin: 0, marginRight: 'auto'}}
+            onClick={() => {
+              const container = document.getElementById('flower-animation-container');
+              if (!container) return;
+              for (let i = 0; i < 12; i++) {
+                const flower = document.createElement('img');
+                flower.src = '/favicon.svg';
+                flower.alt = 'flower';
+                flower.style.position = 'absolute';
+                flower.style.left = Math.random() * 90 + '%';
+                flower.style.top = '-40px';
+                flower.style.width = '32px';
+                flower.style.opacity = '0.85';
+                flower.style.pointerEvents = 'none';
+                flower.style.transition = 'transform 2.2s cubic-bezier(.4,1.3,.6,1), opacity 0.7s';
+                setTimeout(() => {
+                  flower.style.transform = `translateY(${window.innerHeight * 0.8 + Math.random()*60}px) rotate(${Math.random()*60-30}deg)`;
+                  flower.style.opacity = '0';
+                }, 30);
+                setTimeout(() => {
+                  if (flower.parentNode) flower.parentNode.removeChild(flower);
+                }, 2500);
+                container.appendChild(flower);
+              }
+            }}
+          >
+            NotlandDesign
+          </h1>
           <nav className="main-nav">
             <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
             <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About Me</NavLink>
@@ -31,7 +60,7 @@ function Layout() {
             <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
             <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''}>CV</NavLink>
           </nav>
-          <div className="lang-switcher" style={{display: 'flex', alignItems: 'center', gap: '0.7em'}}>
+          <div className="lang-switcher" style={{display: 'flex', alignItems: 'center', gap: '0.7em', marginLeft: 'auto'}}>
             <button
               aria-label="Switch to English"
               className={`icon-btn${lang === 'en' ? ' active' : ''}`}
@@ -49,6 +78,7 @@ function Layout() {
           </div>
         </div>
       </header>
+      <div id="flower-animation-container" style={{position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', pointerEvents: 'none', zIndex: 999}}></div>
       <main>
         <Outlet />
       </main>

@@ -60,7 +60,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2em 2em 1.2em 2em;
+  padding: 1.2em 2em 1.2em 0.5em;
   gap: 2em;
 }
 .main-nav {
