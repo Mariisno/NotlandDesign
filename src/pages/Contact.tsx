@@ -10,7 +10,7 @@ function Contact() {
         {lang === 'no'
           ? 'Vil du samarbeide eller bare si hei?'
           : 'Want to collaborate or just say hi?'}<br />
-        <a href="mailto:example@example.com">example@example.com</a>
+  <a href="mailto:marinosve@gmail.com">marinosve@gmail.com</a>
       </p>
     </section>
   );
