@@ -1,55 +1,24 @@
-import { useState } from 'react'
 import './App.css'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { LanguageContext } from './Layout';
 
 function App() {
+  const { lang } = useContext(LanguageContext);
   return (
-    <>
-      <header className="header">
-        <h1>My Portfolio</h1>
-        <nav>
-          <a href="#about">About Me</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
-      <main>
-        <section id="about" className="section">
-          <h2>About Me</h2>
-          <p>
-            Welcome to my portfolio! I am a passionate developer with a love for
-            creating beautiful and functional web applications.
-          </p>
-        </section>
-
-        <section id="projects" className="section">
-          <h2>Projects</h2>
-          <div className="project-list">
-            <div className="project-item">
-              <h3>Project 1</h3>
-              <p>A brief description of Project 1.</p>
-            </div>
-            <div className="project-item">
-              <h3>Project 2</h3>
-              <p>A brief description of Project 2.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className="section">
-          <h2>Contact</h2>
-          <p>
-            Feel free to reach out to me at{' '}
-            <a href="mailto:example@example.com">example@example.com</a>.
-          </p>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-      </footer>
-    </>
-  )
+    <section className="hero">
+      <div className="hero-content">
+        <h2 className="hero-title">{lang === 'no' ? 'Hei, jeg er Mari Svennevik Notland!' : 'Hi, I’m Mari Svennevik Notland!'}</h2>
+        <h3 className="hero-subtitle">{lang === 'no' ? 'UX-designer & kreativ problemløser' : 'UX Designer & Creative Problem Solver'}</h3>
+        <p className="hero-desc">
+          {lang === 'no'
+            ? 'Jeg designer brukervennlige, intuitive og morsomme digitale opplevelser.\nLa oss gjøre nettet til et gladere sted – én piksel om gangen!'
+            : 'I design delightful, intuitive, and fun digital experiences.\nLet’s make the web a happier place—one pixel at a time!'}
+        </p>
+        <Link className="hero-cta" to="/contact">{lang === 'no' ? 'Ta kontakt' : 'Let’s Connect'}</Link>
+      </div>
+    </section>
+  );
 }
 
 export default App
