@@ -4,7 +4,7 @@ import { useState, createContext } from 'react';
 
 export const LanguageContext = createContext({
   lang: 'en',
-  setLang: (l: string) => {},
+  setLang: (_: string) => {},
 });
 
 const flagStyle = {
