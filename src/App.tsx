@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { LanguageContext } from './Layout';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { lang } = useContext(LanguageContext);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count eeeee {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+    <section className="hero">
+      <div className="hero-content">
+        <h2 className="hero-title">{lang === 'no' ? 'Hei, jeg er Mari Svennevik Notland!' : 'Hi, I’m Mari Svennevik Notland!'}</h2>
+        <h3 className="hero-subtitle">{lang === 'no' ? 'UX-designer & kreativ problemløser' : 'UX Designer & Creative Problem Solver'}</h3>
+        <p className="hero-desc">
+          {lang === 'no'
+            ? 'Jeg designer brukervennlige, intuitive og morsomme digitale opplevelser.\nLa oss gjøre nettet til et gladere sted – én piksel om gangen!'
+            : 'I design delightful, intuitive, and fun digital experiences.\nLet’s make the web a happier place—one pixel at a time!'}
         </p>
+        <Link className="hero-cta" to="/contact">{lang === 'no' ? 'Ta kontakt' : 'Let’s Connect'}</Link>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </section>
+  );
 }
 
 export default App
