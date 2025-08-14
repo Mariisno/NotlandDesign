@@ -1,14 +1,69 @@
+/* CV tab menu styling */
+.cv-tabs {
+  display: flex;
+  gap: 1.2em;
+  background: #f6f5f3;
+  border-radius: 2em;
+  border: 1.5px solid #b7c8b5;
+  padding: 0.5em 1em;
+  margin-bottom: 2em;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 1px 8px 0 #b7c8b522;
+}
+.cv-tab {
+  font-family: var(--font-main);
+  font-size: 1.08em;
+  font-weight: 600;
+  color: var(--accent-green);
+  background: transparent;
+  border: none;
+  border-radius: 1.2em;
+  padding: 0.45em 1.3em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  outline: none;
+  box-shadow: none;
+  position: relative;
+}
+.cv-tab.active {
+  background: var(--accent-green);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 #b7c8b544;
+  border: none;
+  z-index: 1;
+}
+.cv-tab:not(.active):hover, .cv-tab:focus {
+  background: #e6ede7;
+  color: var(--accent-green);
+  box-shadow: 0 1px 4px 0 #b7c8b522;
+}
+/* Date badge styling for CV/education/experience */
+.date-badge {
+  display: inline-block;
+  background: var(--accent-green);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 0.5em;
+  padding: 0.3em 1.1em;
+  margin-bottom: 0.5em;
+  margin-right: 0.7em;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 4px 0 #b7c8b544;
+}
 /* --- MUTED EARTHY GREEN/NEUTRAL PALETTE --- */
 :root {
   --main-bg: linear-gradient(120deg, #f4f6f3 60%, #e6ede7 100%);
-  --accent-green: #5a7d6c;
-  --accent-green-dark: #355c47;
+  --accent-green: #355c47;
   --accent-green-light: #e6ede7;
   --accent-beige: #f6f5f3;
-  --text-main: #355c47;
+  --text-main: #222;
   --text-light: #fff;
   --border-main: #b7c8b5;
   --shadow-main: 0 2px 12px 0 #b7c8b544;
+  --font-main: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-logo: 'Fredoka One', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 html, body {
@@ -18,6 +73,12 @@ html, body {
   padding: 0;
   background: var(--main-bg);
   box-sizing: border-box;
+  font-family: var(--font-main);
+  font-size: 18px;
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -31,8 +92,8 @@ html, body {
 
 
 .logo-title {
-  font-family: 'Fredoka One', cursive, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 2.8em;
+  font-family: var(--font-logo);
+  font-size: 2.4em;
   color: var(--accent-green);
   text-shadow: 2px 2px 0 var(--accent-green-light), 0 2px 8px #b7c8b5aa;
   letter-spacing: 2px;
@@ -60,17 +121,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2em 2em 1.2em 0.5em;
-  gap: 2em;
+  padding: 1.5em 3.5em 1.5em 1.5em;
+  gap: 3em;
 }
 .main-nav {
   display: flex;
-  gap: 2em;
+  gap: 2.5em;
   align-items: center;
 }
 .main-nav a {
-  font-size: 1.1em;
-  color: var(--text-main);
+  font-size: 1em;
+  color: var(--accent-green);
   text-decoration: none;
   font-weight: 500;
   padding: 0.3em 0.7em;
@@ -78,10 +139,10 @@ html, body {
   transition: background 0.2s, color 0.2s;
 }
 .main-nav a:hover, .main-nav .active {
-  background: linear-gradient(90deg, var(--accent-green) 60%, var(--accent-green-light) 100%);
-  color: var(--text-light) !important;
+  background: var(--accent-green);
+  color: #fff !important;
   border-radius: 1em;
-  box-shadow: var(--shadow-main);
+  box-shadow: 0 2px 12px 0 #b7c8b544;
   font-weight: 700;
   text-shadow: 0 2px 8px var(--accent-green-light);
   border-bottom: 2px solid var(--accent-green);
@@ -175,11 +236,14 @@ html, body {
   background: #fff;
   border-radius: 1.2em;
   padding: 2em 1.5em;
-  box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.04);
+  box-shadow: 0 2px 12px 0 #b7c8b544;
+  color: var(--text-main);
 }
 .section h2 {
   color: var(--accent-green);
   margin-bottom: 0.7em;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 .project-list {
   display: flex;
@@ -213,13 +277,13 @@ html, body {
 .footer {
   margin-top: 3em;
   padding: 1.5em 0 0.5em 0;
-  color: var(--accent-green-dark);
+  color: var(--accent-green);
   letter-spacing: 0.5px;
-  background: linear-gradient(90deg, var(--accent-beige) 0%, var(--accent-green-light) 100%);
-  border-top: 2px solid var(--accent-green-light);
-  box-shadow: 0 -2px 12px 0 var(--accent-green-light);
-  font-family: 'Fredoka One', cursive, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  background: #e6ede7;
+  border-top: 2px solid #b7c8b5;
+  box-shadow: 0 -2px 12px 0 #b7c8b5;
+  font-family: var(--font-main);
+  font-size: 1.1em;
 }
 
 @keyframes emoji-bounce {
