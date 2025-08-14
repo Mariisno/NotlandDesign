@@ -1,33 +1,53 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count eeeee {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header className="header">
+        <h1>My Portfolio</h1>
+        <nav>
+          <a href="#about">About Me</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="about" className="section">
+          <h2>About Me</h2>
+          <p>
+            Welcome to my portfolio! I am a passionate developer with a love for
+            creating beautiful and functional web applications.
+          </p>
+        </section>
+
+        <section id="projects" className="section">
+          <h2>Projects</h2>
+          <div className="project-list">
+            <div className="project-item">
+              <h3>Project 1</h3>
+              <p>A brief description of Project 1.</p>
+            </div>
+            <div className="project-item">
+              <h3>Project 2</h3>
+              <p>A brief description of Project 2.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="section">
+          <h2>Contact</h2>
+          <p>
+            Feel free to reach out to me at{' '}
+            <a href="mailto:example@example.com">example@example.com</a>.
+          </p>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      </footer>
     </>
   )
 }
