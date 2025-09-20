@@ -19,6 +19,7 @@ const flagStyle = {
 
 function Layout() {
   const [lang, setLang] = useState('en');
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       <header className="header header-bar">
@@ -53,29 +54,74 @@ function Layout() {
           >
             NotlandDesign
           </h1>
-          <nav className="main-nav">
-            <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About Me</NavLink>
-            <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>Projects</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
-            <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''}>CV</NavLink>
+          {/* Hamburger button for mobile */}
+          <button
+            className={`hamburger${navOpen ? ' open' : ''}`}
+            aria-label={navOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={navOpen}
+            aria-controls="main-nav"
+            onClick={() => setNavOpen((v) => !v)}
+            type="button"
+          >
+            {/* Modern SVG hamburger icon */}
+            {!navOpen ? (
+              <svg width="2em" height="2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{display:'block'}}>
+                <rect x="3" y="6" width="18" height="2" rx="1" fill="#5a7d6c"/>
+                <rect x="3" y="11" width="18" height="2" rx="1" fill="#5a7d6c"/>
+                <rect x="3" y="16" width="18" height="2" rx="1" fill="#5a7d6c"/>
+              </svg>
+            ) : (
+              <svg width="2em" height="2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{display:'block'}}>
+                <line x1="5" y1="5" x2="19" y2="19" stroke="#5a7d6c"/>
+                <line x1="19" y1="5" x2="5" y2="19" stroke="#5a7d6c"/>
+              </svg>
+            )}
+          </button>
+          <nav className={`main-nav${navOpen ? ' open' : ''}`} id="main-nav">
+            <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setNavOpen(false)}>Home</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setNavOpen(false)}>About Me</NavLink>
+            <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setNavOpen(false)}>Projects</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setNavOpen(false)}>Contact</NavLink>
+            <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setNavOpen(false)}>CV</NavLink>
+            {/* Show language switcher only in mobile nav when open, otherwise show desktop version */}
+            {navOpen && (
+              <div className="lang-switcher mobile-lang-switcher">
+                <button
+                  aria-label="Switch to English"
+                  className={`icon-btn${lang === 'en' ? ' active' : ''}`}
+                  onClick={() => { setLang('en'); setNavOpen(false); }}
+                >
+                  <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag" style={flagStyle} /> EN
+                </button>
+                <button
+                  aria-label="Bytt til norsk"
+                  className={`icon-btn${lang === 'no' ? ' active' : ''}`}
+                  onClick={() => { setLang('no'); setNavOpen(false); }}
+                >
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk flagg" style={flagStyle} /> NO
+                </button>
+              </div>
+            )}
           </nav>
-          <div className="lang-switcher" style={{display: 'flex', alignItems: 'center', gap: '0.7em', marginLeft: 'auto'}}>
-            <button
-              aria-label="Switch to English"
-              className={`icon-btn${lang === 'en' ? ' active' : ''}`}
-              onClick={() => setLang('en')}
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag" style={flagStyle} /> EN
-            </button>
-            <button
-              aria-label="Bytt til norsk"
-              className={`icon-btn${lang === 'no' ? ' active' : ''}`}
-              onClick={() => setLang('no')}
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk flagg" style={flagStyle} /> NO
-            </button>
-          </div>
+          {/* Desktop language switcher, hidden on mobile or when menu is open */}
+          {!navOpen && (
+            <div className="lang-switcher desktop-lang-switcher" style={{display: 'flex', alignItems: 'center', gap: '0.7em', marginLeft: 'auto'}}>
+              <button
+                aria-label="Switch to English"
+                className={`icon-btn${lang === 'en' ? ' active' : ''}`}
+                onClick={() => setLang('en')}
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag" style={flagStyle} /> EN
+              </button>
+              <button
+                aria-label="Bytt til norsk"
+                className={`icon-btn${lang === 'no' ? ' active' : ''}`}
+                onClick={() => setLang('no')}
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk flagg" style={flagStyle} /> NO
+              </button>
+            </div>
+          )}
         </div>
       </header>
       <div id="flower-animation-container" style={{position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', pointerEvents: 'none', zIndex: 999}}></div>
