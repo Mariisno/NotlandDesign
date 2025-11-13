@@ -28,10 +28,6 @@ export function Hero() {
             
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2 text-slate-600">
-                <Phone className="size-4" />
-                <span>{t('hero.phone')}</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-600">
                 <Mail className="size-4" />
                 <a href="mailto:marinosve@gmail.com" className="underline hover:text-slate-900">
                   marinosve@gmail.com

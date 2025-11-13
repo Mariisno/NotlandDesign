@@ -14,7 +14,7 @@ export function Contact() {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="flex justify-center max-w-2xl mx-auto">
             <a 
               href="mailto:marinosve@gmail.com"
               className="flex flex-col items-center gap-4 p-6 bg-slate-800 rounded-2xl hover:bg-slate-700 transition-all hover:scale-105 group"
@@ -25,19 +25,6 @@ export function Contact() {
               <div>
                 <p className="text-slate-400 mb-1">{t('contact.email')}</p>
                 <p className="text-white">marinosve@gmail.com</p>
-              </div>
-            </a>
-            
-            <a 
-              href="tel:47709654"
-              className="flex flex-col items-center gap-4 p-6 bg-slate-800 rounded-2xl hover:bg-slate-700 transition-all hover:scale-105 group"
-            >
-              <div className="flex items-center justify-center w-14 h-14 bg-slate-700 rounded-full group-hover:bg-slate-600 transition-colors">
-                <Phone className="size-6" />
-              </div>
-              <div>
-                <p className="text-slate-400 mb-1">{t('contact.phone')}</p>
-                <p className="text-white">47709654</p>
               </div>
             </a>
           </div>
