@@ -45,7 +45,8 @@ const translations = {
       projects: 'Projects',
       about: 'About',
       experience: 'Experience',
-      contact: 'Contact'
+      contact: 'Contact',
+      myStory: 'My Story'
     },
     hero: {
       name: 'Mari Svennevik Notland',
@@ -118,7 +119,19 @@ const translations = {
       title: "Let's Collaborate",
       subtitle: 'I am always open to new opportunities and interesting projects. Feel free to reach out if you want to discuss a collaboration or just grab a coffee.',
       email: 'Email',
-      phone: 'Phone'
+      phone: 'Phone',
+      form: {
+        name: 'Name',
+        namePlaceholder: 'Your name',
+        email: 'Email',
+        emailPlaceholder: 'your@email.com',
+        message: 'Message',
+        messagePlaceholder: 'Tell me about your project or idea...',
+        submit: 'Send message',
+        sending: 'Sending...',
+        success: 'Message sent! I will get back to you soon.',
+        error: 'Something went wrong. Please try again or email me directly.'
+      }
     },
     footer: {
       tagline: 'UX Designer focused on user-friendly and intuitive solutions',
@@ -170,7 +183,27 @@ const translations = {
             'User-friendliness, high-fidelity prototype',
             'Design of complex user flow for food ordering',
             'Focus on accessibility and intuitive interface'
-          ]
+          ],
+          detail: {
+            backToProjects: 'Back to projects',
+            subtitle: 'Interactive prototype of a self-service kiosk for SIO (Studentsamskipnaden i Oslo). Student project from the IN2020 course at UiO.',
+            openInFigma: 'Open in Figma',
+            prototypeTitle: 'Interactive Prototype',
+            prototypeDescription: 'Designed in Figma as part of a student project. The prototype shows the user flow for food ordering via self-service kiosk.',
+            aboutTitle: 'About the project',
+            aboutDescription: 'This was a university project where the goal was to design a user-friendly self-service kiosk for SIO. The focus was on creating an intuitive user experience that makes food ordering quick and easy.',
+            period: 'Period:',
+            periodValue: 'IN2020 (UiO)',
+            role: 'Role:',
+            roleValue: 'UX Designer & Prototyper',
+            focusTitle: 'Focus areas',
+            focusItems: [
+              'User-friendly interface for quick purchase',
+              'Clear product display with images',
+              'Real-time shopping cart overview',
+              'Allergen information clearly visible'
+            ]
+          }
         },
         in1060: {
           title: 'User-Oriented Design',
@@ -215,6 +248,47 @@ const translations = {
           ]
         }
       }
+    },
+    story: {
+      title: 'My Story',
+      subtitle: 'The journey from high school to UX designer',
+      scrollPrompt: 'Scroll to explore my journey',
+      funFact: {
+        badge: '✨ Fun Fact',
+        title: 'From Psychology to Code',
+        description: "My journey might seem unconventional, but it's the perfect combination! Psychology taught me to understand people, informatics gave me the tools to create solutions, and UX design lets me bring it all together to make meaningful digital experiences."
+      },
+      timeline: {
+        highSchool: {
+          year: '2020',
+          title: 'High School Graduate',
+          description: 'Finished high school and was ready for new adventures. Decided to study psychology to understand people better.'
+        },
+        ntnu: {
+          year: '2020-2022',
+          title: 'Psychology Studies at NTNU',
+          description: 'Studied psychology at NTNU in Trondheim. Learned about human behavior, research methods, and completed my bachelor thesis with qualitative interviews and thematic analysis.',
+          highlights: ['Qualitative research', 'Bachelor thesis', 'Understanding human behavior']
+        },
+        uio: {
+          year: '2022-2024',
+          title: 'Informatics at UiO',
+          description: 'Switched to informatics with focus on Design, Use and Interaction at University of Oslo. Discovered my passion for UX design through user-centered projects.',
+          highlights: ['UX design projects', 'User research', 'Prototyping', '3D modeling']
+        },
+        advania: {
+          year: '2023-2024',
+          title: 'IT Support at Advania',
+          description: 'Worked as IT Support Technician while studying. Gained experience in customer service and technical problem-solving.',
+          highlights: ['Technical support', 'Customer service', 'Problem-solving']
+        },
+        aibel: {
+          year: '2024-Present',
+          title: 'UX Designer at Aibel',
+          description: 'Working as UX Designer focusing on design systems, user insights, and product development. Also serving as Scrum Master.',
+          highlights: ['Design systems', 'User research', 'Scrum Master', 'Product development']
+        }
+      }
     }
   },
   no: {
@@ -222,7 +296,8 @@ const translations = {
       projects: 'Prosjekter',
       about: 'Om meg',
       experience: 'Erfaring',
-      contact: 'Kontakt'
+      contact: 'Kontakt',
+      myStory: 'Min Historie'
     },
     hero: {
       name: 'Mari Svennevik Notland',
@@ -295,7 +370,19 @@ const translations = {
       title: 'La oss samarbeide',
       subtitle: 'Jeg er alltid åpen for nye muligheter og interessante prosjekter. Ta gjerne kontakt hvis du vil diskutere et samarbeid eller bare ta en kaffe.',
       email: 'E-post',
-      phone: 'Telefon'
+      phone: 'Telefon',
+      form: {
+        name: 'Navn',
+        namePlaceholder: 'Ditt navn',
+        email: 'E-post',
+        emailPlaceholder: 'din@epost.no',
+        message: 'Melding',
+        messagePlaceholder: 'Fortell meg om ditt prosjekt eller idé...',
+        submit: 'Send melding',
+        sending: 'Sender...',
+        success: 'Melding sendt! Jeg tar kontakt snart.',
+        error: 'Noe gikk galt. Prøv igjen eller send e-post direkte.'
+      }
     },
     footer: {
       tagline: 'UX Designer med fokus på brukervennlige og intuitive løsninger',
@@ -347,7 +434,27 @@ const translations = {
             'Brukervennlighet, høyoppløselig prototype',
             'Design av kompleks brukerflyt for matbestilling',
             'Fokus på tilgjengelighet og intuitivt grensesnitt'
-          ]
+          ],
+          detail: {
+            backToProjects: 'Tilbake til prosjekter',
+            subtitle: 'Interaktiv prototype av en selvbetjeningskiosk for SIO (Studentsamskipnaden i Oslo). Studentprosjekt fra IN2020-kurset ved UiO.',
+            openInFigma: 'Åpne i Figma',
+            prototypeTitle: 'Interaktiv Prototype',
+            prototypeDescription: 'Designet i Figma som en del av et studentprosjekt. Prototypen viser brukerflyt for matbestilling via selvbetjeningskiosk.',
+            aboutTitle: 'Om prosjektet',
+            aboutDescription: 'Dette var et universitetsprosjekt hvor målet var å designe en brukervennlig selvbetjeningskiosk for SIO. Fokuset lå på å skape en intuitiv brukeropplevelse som gjør matbestilling rask og enkel.',
+            period: 'Periode:',
+            periodValue: 'IN2020 (UiO)',
+            role: 'Rolle:',
+            roleValue: 'UX Designer & Prototyper',
+            focusTitle: 'Fokusområder',
+            focusItems: [
+              'Brukervennlig interface for raskt kjøp',
+              'Tydelig produktvisning med bilder',
+              'Handlekurv-oversikt i sanntid',
+              'Allergeninformasjon godt synlig'
+            ]
+          }
         },
         in1060: {
           title: 'Brukerorientert Design',
@@ -390,6 +497,47 @@ const translations = {
             'Iterativ prosess med testing og forbedringer',
             'Lært om moderne web-teknologier underveis'
           ]
+        }
+      }
+    },
+    story: {
+      title: 'Min Historie',
+      subtitle: 'Reisen fra videregående til UX-designer',
+      scrollPrompt: 'Scroll for å utforske min reise',
+      funFact: {
+        badge: '✨ Morsomt Faktum',
+        title: 'Fra Psykologi til Kode',
+        description: 'Min reise kan virke utradisjonell, men det er den perfekte kombinasjonen! Psykologi lærte meg å forstå mennesker, informatikk ga meg verktøyene til å skape løsninger, og UX-design lar meg kombinere alt for å lage meningsfulle digitale opplevelser.'
+      },
+      timeline: {
+        highSchool: {
+          year: '2020',
+          title: 'Fullført videregående',
+          description: 'Fullførte videregående og var klar for nye eventyr. Bestemte meg for å studere psykologi for å forstå mennesker bedre.'
+        },
+        ntnu: {
+          year: '2020-2022',
+          title: 'Psykologistudier på NTNU',
+          description: 'Studerte psykologi på NTNU i Trondheim. Lærte om menneskelig atferd, forskningsmetoder, og gjennomførte bacheloroppgave med kvalitative intervjuer og tematisk analyse.',
+          highlights: ['Kvalitativ forskning', 'Bacheloroppgave', 'Forståelse av menneskelig atferd']
+        },
+        uio: {
+          year: '2022-2024',
+          title: 'Informatikk på UiO',
+          description: 'Byttet til informatikk med fokus på Design, Bruk og Interaksjon ved Universitetet i Oslo. Oppdaget min lidenskap for UX-design gjennom brukersentrerte prosjekter.',
+          highlights: ['UX-designprosjekter', 'Brukerundersøkelser', 'Prototyping', '3D-modellering']
+        },
+        advania: {
+          year: '2023-2024',
+          title: 'IT Support på Advania',
+          description: 'Jobbet som IT Support Technician mens jeg studerte. Fikk erfaring med kundeservice og teknisk problemløsning.',
+          highlights: ['Teknisk support', 'Kundeservice', 'Problemløsning']
+        },
+        aibel: {
+          year: '2024-Nå',
+          title: 'UX Designer hos Aibel',
+          description: 'Jobber som UX Designer med fokus på designsystemer, brukerinnsikt og produktutvikling. Fungerer også som Scrum Master.',
+          highlights: ['Designsystemer', 'Brukerundersøkelser', 'Scrum Master', 'Produktutvikling']
         }
       }
     }

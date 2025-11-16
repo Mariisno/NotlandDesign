@@ -6,28 +6,33 @@ import { useLanguage } from "../contexts/LanguageContext";
 function Nav({ onSectionClick }: { onSectionClick: (sectionId: string) => void }) {
   const { t } = useLanguage();
   
+  const buttonClass = "px-4 py-2 capitalize font-['Inter:Medium',sans-serif] font-medium text-[16px] text-black tracking-[-0.08px] hover:bg-slate-100 hover:text-black rounded-lg transition-all cursor-pointer";
+  
   return (
-    <nav className="box-border capitalize content-stretch flex font-['Inter:Medium',sans-serif] font-medium gap-[40px] items-center leading-[0] not-italic overflow-visible p-0 relative shrink-0 text-[16px] text-black text-center text-nowrap tracking-[-0.08px]">
-      <Link to="/projects" className="flex flex-col justify-center relative shrink-0 hover:opacity-70 transition-opacity">
-        <p className="leading-[1.45] text-nowrap whitespace-pre">{t('nav.projects')}</p>
+    <nav className="flex items-center gap-2">
+      <Link to="/projects" className={buttonClass}>
+        {t('nav.projects')}
+      </Link>
+      <Link to="/my-story" className={buttonClass}>
+        {t('nav.myStory')}
       </Link>
       <button 
         onClick={() => onSectionClick('about')}
-        className="flex flex-col justify-center relative shrink-0 hover:opacity-70 transition-opacity"
+        className={buttonClass}
       >
-        <p className="leading-[1.45] text-nowrap whitespace-pre">{t('nav.about')}</p>
+        {t('nav.about')}
       </button>
       <button 
         onClick={() => onSectionClick('experience')}
-        className="flex flex-col justify-center relative shrink-0 hover:opacity-70 transition-opacity"
+        className={buttonClass}
       >
-        <p className="leading-[1.45] text-nowrap whitespace-pre">{t('nav.experience')}</p>
+        {t('nav.experience')}
       </button>
       <button 
         onClick={() => onSectionClick('contact')}
-        className="flex flex-col justify-center relative shrink-0 hover:opacity-70 transition-opacity"
+        className={buttonClass}
       >
-        <p className="leading-[1.45] text-nowrap whitespace-pre">{t('nav.contact')}</p>
+        {t('nav.contact')}
       </button>
     </nav>
   );
@@ -104,6 +109,13 @@ export function Navigation() {
               className="text-black capitalize hover:opacity-70 transition-opacity"
             >
               {t('nav.projects')}
+            </Link>
+            <Link
+              to="/my-story"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-black capitalize hover:opacity-70 transition-opacity"
+            >
+              {t('nav.myStory')}
             </Link>
             <button
               onClick={() => scrollToSection('about')}

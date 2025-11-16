@@ -49,7 +49,7 @@ export function Footer() {
                 <span>marinosve@gmail.com</span>
               </a>
               <a 
-                href="https://www.linkedin.com/in/mari-svennevik-notland/" 
+                href="https://www.linkedin.com/in/marinotland/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"
@@ -58,7 +58,7 @@ export function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a 
-                href="https://github.com/marinotland" 
+                href="https://github.com/Mariisno" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"
