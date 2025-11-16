@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
-import Kiosk from "../imports/Kiosk";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export function SioKioskDetail() {
@@ -58,11 +57,13 @@ export function SioKioskDetail() {
           </div>
 
           {/* Prototype Container */}
-          <div className="w-full flex justify-center overflow-x-auto">
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30 rounded-2xl shadow-inner p-8">
-              <div className="w-[1336px] h-[1015px]">
-                <Kiosk />
-              </div>
+          <div className="w-full">
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30 rounded-2xl shadow-inner p-4 lg:p-8">
+              <iframe 
+                src="https://www.figma.com/proto/zbkfKT1GzyToeiL7B46CWs/Oblig-2-2020?page-id=0%3A1&type=design&node-id=304-3&viewport=696%2C479%2C0.22&t=rvh1pqGNvAcQjBMx-1&scaling=contain&starting-point-node-id=304%3A3&mode=design&embed-host=share"
+                className="w-full h-[800px] lg:h-[900px] rounded-xl border-0"
+                allowFullScreen
+              />
             </div>
           </div>
 
@@ -74,9 +75,7 @@ export function SioKioskDetail() {
                 {t('projects.list.sioKiosk.detail.aboutDescription')}
               </p>
               <div className="space-y-2">
-                <p className="text-slate-600 dark:text-slate-400">
-                  <span className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100">{t('projects.list.sioKiosk.detail.period')}</span> {t('projects.list.sioKiosk.detail.periodValue')}
-                </p>
+        
                 <p className="text-slate-600 dark:text-slate-400">
                   <span className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100">{t('projects.list.sioKiosk.detail.role')}</span> {t('projects.list.sioKiosk.detail.roleValue')}
                 </p>

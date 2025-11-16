@@ -4,6 +4,7 @@ import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
+import { SectionProvider } from "./contexts/SectionContext";
 import { Toaster } from "sonner@2.0.3";
 
 // Lazy load page components for better performance
@@ -54,7 +55,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <AppContent />
+        <SectionProvider>
+          <AppContent />
+        </SectionProvider>
       </LanguageProvider>
     </ThemeProvider>
   );
