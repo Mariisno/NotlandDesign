@@ -1,12 +1,14 @@
 import { User, Heart, Users, Lightbulb } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "motion/react";
+import { InfoBadge } from "./ui/pill-badge";
+import { HighlightCard } from "./ui/feature-card";
 
 export function AboutMe() {
   const { t } = useLanguage();
   
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,11 +17,9 @@ export function AboutMe() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-900 rounded-full mb-4">
-            <User className="size-4" />
-            <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold">{t('projects.aboutMe.title')}</span>
-          </div>
-          <h2 className="text-slate-900 mb-6">{t('projects.aboutMe.title')}</h2>
+          <InfoBadge icon={<User className="size-4" />} className="mb-4">
+            {t('projects.aboutMe.title')}
+          </InfoBadge>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
@@ -31,15 +31,15 @@ export function AboutMe() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-slate-600 leading-relaxed text-lg">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               {t('projects.aboutMe.intro')}
             </p>
             
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               {t('projects.aboutMe.background')}
             </p>
             
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               {t('projects.aboutMe.approach')}
             </p>
           </motion.div>
@@ -52,53 +52,26 @@ export function AboutMe() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-100 rounded-xl shrink-0">
-                  <Lightbulb className="size-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-slate-900 mb-2">Research-Driven</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('language') === 'en' 
-                      ? 'Deep understanding of user behavior through qualitative research methods'
-                      : 'Dyp forståelse av brukeratferd gjennom kvalitative forskningsmetoder'}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-purple-100 rounded-xl shrink-0">
-                  <Users className="size-6 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="text-slate-900 mb-2">Collaborative</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('language') === 'en'
-                      ? 'Thrive in cross-functional teams, bridging design and development'
-                      : 'Trives i tverrfaglige team og bygger broen mellom design og utvikling'}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-green-100 rounded-xl shrink-0">
-                  <Heart className="size-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-slate-900 mb-2">User Advocate</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('language') === 'en'
-                      ? 'Always putting users first while balancing business and technical needs'
-                      : 'Setter alltid brukeren først samtidig som jeg balanserer forretnings- og tekniske behov'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <HighlightCard
+              icon={<Lightbulb className="size-6" />}
+              title={t('projects.aboutMe.cards.researchDriven.title')}
+              description={t('projects.aboutMe.cards.researchDriven.description')}
+              variant="blue"
+            />
+            
+            <HighlightCard
+              icon={<Users className="size-6" />}
+              title={t('projects.aboutMe.cards.collaborative.title')}
+              description={t('projects.aboutMe.cards.collaborative.description')}
+              variant="purple"
+            />
+            
+            <HighlightCard
+              icon={<Heart className="size-6" />}
+              title={t('projects.aboutMe.cards.userAdvocate.title')}
+              description={t('projects.aboutMe.cards.userAdvocate.description')}
+              variant="green"
+            />
           </motion.div>
         </div>
 

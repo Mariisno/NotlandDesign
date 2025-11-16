@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export function Footer() {
@@ -7,7 +7,7 @@ export function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-slate-950 text-slate-400 py-12">
+    <footer className="bg-slate-950 dark:bg-black text-slate-400 py-12 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Description */}
@@ -42,14 +42,7 @@ export function Footer() {
             <h4 className="text-white mb-4">{t('footer.socialContact')}</h4>
             <div className="flex flex-col gap-3">
               <a 
-                href="mailto:marinosve@gmail.com" 
-                className="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <Mail className="size-4" />
-                <span>marinosve@gmail.com</span>
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/marinotland/" 
+                href="https://www.linkedin.com/in/mari-svennevik-notland" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"
@@ -58,7 +51,7 @@ export function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a 
-                href="https://github.com/Mariisno" 
+                href="https://github.com/marinosve" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"

@@ -1,5 +1,7 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { IconBox } from "./ui/icon-box";
+import { PillBadge } from "./ui/pill-badge";
 
 interface TimelineItem {
   periodKey: string;
@@ -41,47 +43,44 @@ const timeline: TimelineItem[] = [
 export function Experience() {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-slate-950 transition-colors duration-200">
       <div className="max-w-5xl mx-auto px-6">
         <div className="space-y-4 mb-16">
-          <h2 className="text-slate-900">{t('experience.title')}</h2>
-          <p className="text-slate-600 max-w-2xl">
+          <h2 className="text-slate-900 dark:text-slate-100">{t('experience.title')}</h2>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
             {t('experience.subtitle')}
           </p>
         </div>
         
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700" />
           
           <div className="space-y-8">
             {timeline.map((item, index) => (
               <div key={index} className="relative pl-20">
                 {/* Icon */}
-                <div className={`absolute left-0 flex items-center justify-center w-16 h-16 rounded-full ${
-                  item.type === 'work' 
-                    ? 'bg-blue-50 text-blue-600' 
-                    : 'bg-green-50 text-green-600'
-                }`}>
-                  {item.type === 'work' ? (
-                    <Briefcase className="size-6" />
-                  ) : (
-                    <GraduationCap className="size-6" />
-                  )}
+                <div className="absolute left-0">
+                  <IconBox
+                    icon={item.type === 'work' ? <Briefcase className="size-6" /> : <GraduationCap className="size-6" />}
+                    variant={item.type === 'work' ? 'blue' : 'green'}
+                    size="lg"
+                    className="size-16"
+                  />
                 </div>
                 
                 {/* Content */}
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <div className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full mb-3">
+                <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg dark:ring-1 dark:ring-white/10">
+                  <PillBadge variant="green" className="mb-3">
                     {t(item.periodKey)}
-                  </div>
+                  </PillBadge>
                   
-                  <h3 className="text-slate-900 mb-1">{t(item.titleKey)}</h3>
+                  <h3 className="text-slate-900 dark:text-slate-100 mb-1">{t(item.titleKey)}</h3>
                   
-                  <p className="text-slate-600 mb-2">{t(item.organizationKey)}</p>
+                  <p className="text-slate-600 dark:text-slate-400 mb-2">{t(item.organizationKey)}</p>
                   
                   {item.descriptionKey && (
-                    <p className="text-slate-500 italic">{t(item.descriptionKey)}</p>
+                    <p className="text-slate-500 dark:text-slate-500 italic">{t(item.descriptionKey)}</p>
                   )}
                 </div>
               </div>

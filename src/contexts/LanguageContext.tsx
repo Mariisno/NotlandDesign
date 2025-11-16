@@ -118,6 +118,7 @@ const translations = {
     contact: {
       title: "Let's Collaborate",
       subtitle: 'I am always open to new opportunities and interesting projects. Feel free to reach out if you want to discuss a collaboration or just grab a coffee.',
+      connectWith: 'Connect with me',
       email: 'Email',
       phone: 'Phone',
       form: {
@@ -153,7 +154,21 @@ const translations = {
         intro: "I'm Mari, a UX designer with a background in psychology and informatics. I combine research, design, and technical understanding to create meaningful digital experiences.",
         background: "My journey into UX design started with psychology studies at NTNU, where I developed a deep understanding of human behavior and qualitative research methods. This foundation, combined with my informatics education at UiO, gives me a unique perspective on how technology can serve users' needs.",
         approach: "I thrive in collaborative environments where I can work across disciplines. Whether I'm conducting user research, facilitating design workshops, or working closely with developers, my goal is always to advocate for the user while balancing business goals and technical constraints.",
-        passion: 'What drives me is the opportunity to solve real problems for real people - creating solutions that are not just functional, but delightful to use.'
+        passion: 'What drives me is the opportunity to solve real problems for real people - creating solutions that are not just functional, but delightful to use.',
+        cards: {
+          researchDriven: {
+            title: 'Research-Driven',
+            description: 'Deep understanding of user behavior through qualitative research methods'
+          },
+          collaborative: {
+            title: 'Collaborative',
+            description: 'Thrive in cross-functional teams, bridging design and development'
+          },
+          userAdvocate: {
+            title: 'User Advocate',
+            description: 'Always putting users first while balancing business and technical needs'
+          }
+        }
       },
       comingSoon: 'More projects coming soon!',
       comingSoonDesc: 'I am continuously working on new projects and case studies. Check back later to see more of my work.',
@@ -369,6 +384,7 @@ const translations = {
     contact: {
       title: 'La oss samarbeide',
       subtitle: 'Jeg er alltid åpen for nye muligheter og interessante prosjekter. Ta gjerne kontakt hvis du vil diskutere et samarbeid eller bare ta en kaffe.',
+      connectWith: 'Koble til meg',
       email: 'E-post',
       phone: 'Telefon',
       form: {
@@ -404,7 +420,21 @@ const translations = {
         intro: 'Jeg er Mari, en UX-designer med bakgrunn i psykologi og informatikk. Jeg kombinerer research, design og teknisk forståelse for å skape meningsfulle digitale opplevelser.',
         background: 'Min reise inn i UX-design startet med psykologistudier på NTNU, hvor jeg utviklet en dyp forståelse for menneskelig atferd og kvalitative forskningsmetoder. Dette fundamentet, kombinert med min informatikkutdanning fra UiO, gir meg et unikt perspektiv på hvordan teknologi kan tjene brukernes behov.',
         approach: 'Jeg trives i samarbeidsmiljøer hvor jeg kan jobbe på tvers av fagområder. Enten jeg gjennomfører brukerundersøkelser, fasiliterer designworkshops eller jobber tett med utviklere, er målet mitt alltid å være brukerens advokat samtidig som jeg balanserer forretningsmål og tekniske begrensninger.',
-        passion: 'Det som driver meg er muligheten til å løse reelle problemer for reelle mennesker - å skape løsninger som ikke bare er funksjonelle, men også gir glede i bruk.'
+        passion: 'Det som driver meg er muligheten til å løse reelle problemer for reelle mennesker - å skape løsninger som ikke bare er funksjonelle, men også gir glede i bruk.',
+        cards: {
+          researchDriven: {
+            title: 'Research-Drevet',
+            description: 'Dyp forståelse av brukeratferd gjennom kvalitative forskningsmetoder'
+          },
+          collaborative: {
+            title: 'Samarbeidsorientert',
+            description: 'Trives i tverrfaglige team og bygger broen mellom design og utvikling'
+          },
+          userAdvocate: {
+            title: 'Brukerens Advokat',
+            description: 'Setter alltid brukeren først samtidig som jeg balanserer forretnings- og tekniske behov'
+          }
+        }
       },
       comingSoon: 'Flere prosjekter kommer snart!',
       comingSoonDesc: 'Jeg jobber kontinuerlig med nye prosjekter og case studies. Kom tilbake senere for å se mer av mitt arbeid.',

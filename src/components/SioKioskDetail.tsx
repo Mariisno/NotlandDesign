@@ -8,13 +8,13 @@ export function SioKioskDetail() {
   const { t } = useLanguage();
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50/30 to-slate-50 pt-[104px]">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50/30 to-slate-50 dark:from-pink-950/20 dark:via-rose-950/10 dark:to-slate-950 pt-[104px] transition-colors duration-200">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200">
+      <div className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <Link 
             to="/projects" 
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-pink-600 transition-colors mb-4"
+            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors mb-4"
           >
             <ArrowLeft className="size-4" />
             <span>{t('projects.list.sioKiosk.detail.backToProjects')}</span>
@@ -24,8 +24,8 @@ export function SioKioskDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="font-['Gabriela:Regular',sans-serif] mb-3">{t('projects.list.sioKiosk.title')}</h1>
-            <p className="text-slate-600 max-w-3xl">
+            <h1 className="font-['Gabriela:Regular',sans-serif] text-slate-900 dark:text-slate-100 mb-3">{t('projects.list.sioKiosk.title')}</h1>
+            <p className="text-slate-600 dark:text-slate-400 max-w-3xl">
               {t('projects.list.sioKiosk.detail.subtitle')}
             </p>
             
@@ -48,18 +48,18 @@ export function SioKioskDetail() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12"
+          className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl dark:shadow-black/40 dark:ring-1 dark:ring-white/10 p-8 lg:p-12"
         >
           <div className="mb-6">
-            <h2 className="font-['Inter:Bold',sans-serif] mb-2">{t('projects.list.sioKiosk.detail.prototypeTitle')}</h2>
-            <p className="text-slate-600">
+            <h2 className="font-['Inter:Bold',sans-serif] text-slate-900 dark:text-slate-100 mb-2">{t('projects.list.sioKiosk.detail.prototypeTitle')}</h2>
+            <p className="text-slate-600 dark:text-slate-400">
               {t('projects.list.sioKiosk.detail.prototypeDescription')}
             </p>
           </div>
 
           {/* Prototype Container */}
           <div className="w-full flex justify-center overflow-x-auto">
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl shadow-inner p-8">
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30 rounded-2xl shadow-inner p-8">
               <div className="w-[1336px] h-[1015px]">
                 <Kiosk />
               </div>
@@ -69,26 +69,26 @@ export function SioKioskDetail() {
           {/* Project Details */}
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-['Inter:Semi_Bold',sans-serif] mb-3">{t('projects.list.sioKiosk.detail.aboutTitle')}</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100 mb-3">{t('projects.list.sioKiosk.detail.aboutTitle')}</h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                 {t('projects.list.sioKiosk.detail.aboutDescription')}
               </p>
               <div className="space-y-2">
-                <p className="text-slate-600">
-                  <span className="font-['Inter:Semi_Bold',sans-serif]">{t('projects.list.sioKiosk.detail.period')}</span> {t('projects.list.sioKiosk.detail.periodValue')}
+                <p className="text-slate-600 dark:text-slate-400">
+                  <span className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100">{t('projects.list.sioKiosk.detail.period')}</span> {t('projects.list.sioKiosk.detail.periodValue')}
                 </p>
-                <p className="text-slate-600">
-                  <span className="font-['Inter:Semi_Bold',sans-serif]">{t('projects.list.sioKiosk.detail.role')}</span> {t('projects.list.sioKiosk.detail.roleValue')}
+                <p className="text-slate-600 dark:text-slate-400">
+                  <span className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100">{t('projects.list.sioKiosk.detail.role')}</span> {t('projects.list.sioKiosk.detail.roleValue')}
                 </p>
               </div>
             </div>
             
             <div>
-              <h3 className="font-['Inter:Semi_Bold',sans-serif] mb-3">{t('projects.list.sioKiosk.detail.focusTitle')}</h3>
+              <h3 className="font-['Inter:Semi_Bold',sans-serif] text-slate-900 dark:text-slate-100 mb-3">{t('projects.list.sioKiosk.detail.focusTitle')}</h3>
               <ul className="space-y-2">
                 {(t('projects.list.sioKiosk.detail.focusItems') as any).map((item: string, index: number) => (
-                  <li key={index} className="flex items-start gap-2 text-slate-600">
-                    <span className="text-pink-600 mt-1">•</span>
+                  <li key={index} className="flex items-start gap-2 text-slate-600 dark:text-slate-400">
+                    <span className="text-pink-600 dark:text-pink-400 mt-1">•</span>
                     <span>{item}</span>
                   </li>
                 ))}

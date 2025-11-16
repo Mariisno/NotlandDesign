@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import { ThemeToggle } from "./ThemeToggle";
 
 function Nav({ onSectionClick }: { onSectionClick: (sectionId: string) => void }) {
   const { t } = useLanguage();
   
-  const buttonClass = "px-4 py-2 capitalize font-['Inter:Medium',sans-serif] font-medium text-[16px] text-black tracking-[-0.08px] hover:bg-slate-100 hover:text-black rounded-lg transition-all cursor-pointer";
+  const buttonClass = "px-4 py-2 capitalize font-['Inter:Medium',sans-serif] font-medium text-[16px] text-slate-900 dark:text-slate-100 tracking-[-0.08px] hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg transition-all cursor-pointer";
   
   return (
     <nav className="flex items-center gap-2">
@@ -62,10 +63,10 @@ export function Navigation() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800 transition-colors duration-200">
       <div className="flex flex-row items-center size-full">
         <div className="box-border content-stretch flex items-center justify-between px-6 md:px-[64px] py-[24px] relative size-full">
-          <Link to="/" className="basis-0 flex flex-col font-['Gabriela:Regular',sans-serif] grow justify-center leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[36px] md:text-[56px] text-black tracking-[-1.68px] hover:opacity-70 transition-opacity">
+          <Link to="/" className="basis-0 flex flex-col font-['Gabriela:Regular',sans-serif] grow justify-center leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[36px] md:text-[56px] text-slate-900 dark:text-slate-100 tracking-[-1.68px] hover:opacity-70 transition-opacity">
             <p className="leading-[1.1]">NotlandDesign</p>
           </Link>
           
@@ -73,12 +74,13 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-6">
             <Nav onSectionClick={scrollToSection} />
             
-            {/* Language Switcher */}
-            <div className="flex items-center gap-2 border-l border-slate-200 pl-6">
-              <Globe className="size-4 text-slate-600" />
+            {/* Theme & Language Switcher */}
+            <div className="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-6">
+              <ThemeToggle />
+              <Globe className="size-4 text-slate-600 dark:text-slate-400" />
               <button
                 onClick={() => setLanguage(language === 'en' ? 'no' : 'en')}
-                className="px-3 py-1 text-sm font-medium text-slate-600 hover:text-black hover:bg-slate-100 rounded-md transition-colors"
+                className="px-3 py-1 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors"
               >
                 {language === 'en' ? 'NO' : 'EN'}
               </button>
@@ -88,7 +90,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-black"
+            className="md:hidden p-2 text-slate-900 dark:text-slate-100"
           >
             {isMobileMenuOpen ? (
               <X className="size-6" />
@@ -101,53 +103,56 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden px-6 pb-6 border-t border-slate-200">
+        <div className="md:hidden px-6 pb-6 border-t border-slate-200 dark:border-slate-700">
           <div className="flex flex-col gap-4 pt-4">
             <Link
               to="/projects"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-black capitalize hover:opacity-70 transition-opacity"
+              className="text-slate-900 dark:text-slate-100 capitalize hover:opacity-70 transition-opacity"
             >
               {t('nav.projects')}
             </Link>
             <Link
               to="/my-story"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-black capitalize hover:opacity-70 transition-opacity"
+              className="text-slate-900 dark:text-slate-100 capitalize hover:opacity-70 transition-opacity"
             >
               {t('nav.myStory')}
             </Link>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-black capitalize hover:opacity-70 transition-opacity text-left"
+              className="text-slate-900 dark:text-slate-100 capitalize hover:opacity-70 transition-opacity text-left"
             >
               {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className="text-black capitalize hover:opacity-70 transition-opacity text-left"
+              className="text-slate-900 dark:text-slate-100 capitalize hover:opacity-70 transition-opacity text-left"
             >
               {t('nav.experience')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-black capitalize hover:opacity-70 transition-opacity text-left"
+              className="text-slate-900 dark:text-slate-100 capitalize hover:opacity-70 transition-opacity text-left"
             >
               {t('nav.contact')}
             </button>
             
-            {/* Mobile Language Switcher */}
-            <div className="flex items-center gap-2 pt-2 border-t border-slate-200">
-              <Globe className="size-4 text-slate-600" />
-              <button
-                onClick={() => {
-                  setLanguage(language === 'en' ? 'no' : 'en');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="px-3 py-1 text-sm font-medium text-slate-600 hover:text-black hover:bg-slate-100 rounded-md transition-colors"
-              >
-                {language === 'en' ? 'Norsk' : 'English'}
-              </button>
+            {/* Mobile Theme & Language Switcher */}
+            <div className="flex items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-700">
+              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <Globe className="size-4 text-slate-600 dark:text-slate-400" />
+                <button
+                  onClick={() => {
+                    setLanguage(language === 'en' ? 'no' : 'en');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="px-3 py-1 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors"
+                >
+                  {language === 'en' ? 'Norsk' : 'English'}
+                </button>
+              </div>
             </div>
           </div>
         </div>

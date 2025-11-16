@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -46,7 +46,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-24 bg-slate-900 text-white">
+    <section className="py-24 bg-slate-900 dark:bg-slate-950 text-white transition-colors duration-200">
       <div className="max-w-5xl mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -57,7 +57,7 @@ export function Contact() {
             className="text-center space-y-6 mb-12"
           >
             <h2 className="text-white">{t('contact.title')}</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-300 dark:text-slate-400 max-w-2xl mx-auto">
               {t('contact.subtitle')}
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder={t('contact.form.namePlaceholder')}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-slate-800 dark:bg-slate-900 border border-slate-700 dark:border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -128,7 +128,7 @@ export function Contact() {
             {/* Contact Info & Social Links */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <p className="text-slate-400">Connect with me</p>
+                <p className="text-slate-400">{t('contact.connectWith')}</p>
                 <div className="flex gap-4">
                   <a
                     href="https://www.linkedin.com/in/mari-svennevik-notland"
