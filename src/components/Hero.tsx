@@ -1,6 +1,6 @@
-import { Phone } from "lucide-react";
 import profileImage from "figma:asset/cbe470e70a7da06a735a5a727ebf806fe1d20267.png";
 import { useLanguage } from "../contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -18,12 +18,12 @@ export function Hero() {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="#/projects"
+              <Link 
+                to="/projects"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl"
               >
                 {t('hero.viewProjects')}
-              </a>
+              </Link>
             </div>
           </div>
           

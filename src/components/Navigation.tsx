@@ -5,29 +5,32 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { useSection } from "../contexts/SectionContext";
 import { ThemeToggle } from "./ThemeToggle";
 
-function Nav({ onSectionClick }: { onSectionClick: (sectionId: string) => void }) {
-  const { t } = useLanguage();
+// Shared function to determine button styling based on active state
+function useNavButtonClass() {
   const location = useLocation();
   const { currentSection } = useSection();
   
-  const getButtonClass = (path?: string, sectionId?: string) => {
+  return (path?: string, sectionId?: string) => {
     let isActive = false;
     
     if (path) {
-      // For page routes (projects, my-story)
       isActive = location.pathname === path;
     } else if (sectionId && location.pathname === '/') {
-      // For section buttons on homepage
       isActive = currentSection === sectionId;
     }
     
-    const baseClass = "px-4 py-2 capitalize font-['Inter:Medium',sans-serif] font-medium text-[16px] tracking-[-0.08px] rounded-lg transition-all cursor-pointer";
+    const baseClass = "px-4 py-2 capitalize font-['Inter:Medium',sans-serif] font-medium text-[16px] tracking-[-0.08px] rounded-lg transition-all";
     
     if (isActive) {
       return `${baseClass} bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400`;
     }
     return `${baseClass} text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/80`;
   };
+}
+
+function Nav({ onSectionClick }: { onSectionClick: (sectionId: string) => void }) {
+  const { t } = useLanguage();
+  const getButtonClass = useNavButtonClass();
   
   return (
     <nav className="flex items-center gap-2">
@@ -62,9 +65,9 @@ function Nav({ onSectionClick }: { onSectionClick: (sectionId: string) => void }
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  const { currentSection } = useSection();
   const navigate = useNavigate();
   const location = useLocation();
+  const getButtonClass = useNavButtonClass();
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);
@@ -129,52 +132,32 @@ export function Navigation() {
             <Link
               to="/projects"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`capitalize transition-all text-left px-3 py-2 rounded-lg ${
-                location.pathname === '/projects'
-                  ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`text-left ${getButtonClass('/projects')}`}
             >
               {t('nav.projects')}
             </Link>
             <Link
               to="/my-story"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`capitalize transition-all text-left px-3 py-2 rounded-lg ${
-                location.pathname === '/my-story'
-                  ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`text-left ${getButtonClass('/my-story')}`}
             >
               {t('nav.myStory')}
             </Link>
             <button
               onClick={() => scrollToSection('about')}
-              className={`capitalize transition-all text-left px-3 py-2 rounded-lg ${
-                location.pathname === '/' && currentSection === 'about'
-                  ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`text-left ${getButtonClass(undefined, 'about')}`}
             >
               {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className={`capitalize transition-all text-left px-3 py-2 rounded-lg ${
-                location.pathname === '/' && currentSection === 'experience'
-                  ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`text-left ${getButtonClass(undefined, 'experience')}`}
             >
               {t('nav.experience')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className={`capitalize transition-all text-left px-3 py-2 rounded-lg ${
-                location.pathname === '/' && currentSection === 'contact'
-                  ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400'
-                  : 'text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`text-left ${getButtonClass(undefined, 'contact')}`}
             >
               {t('nav.contact')}
             </button>

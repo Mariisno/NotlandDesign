@@ -83,10 +83,10 @@ export function AboutMe() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12 border border-slate-200">
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-950/50 rounded-2xl p-8 lg:p-12 border border-slate-200 dark:border-slate-700 dark:ring-1 dark:ring-white/10">
             <div className="flex gap-4 items-start">
-              <div className="text-6xl text-blue-600 opacity-30 leading-none">"</div>
-              <p className="text-slate-700 text-lg leading-relaxed italic pt-4">
+              <div className="text-6xl text-blue-600 dark:text-blue-400 opacity-30 leading-none">"</div>
+              <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed italic pt-4">
                 {t('projects.aboutMe.passion')}
               </p>
             </div>

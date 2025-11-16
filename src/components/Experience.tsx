@@ -71,7 +71,7 @@ export function Experience() {
                 
                 {/* Content */}
                 <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg dark:ring-1 dark:ring-white/10">
-                  <PillBadge variant="green" className="mb-3">
+                  <PillBadge variant={item.type === 'work' ? 'blue' : 'green'} className="mb-3">
                     {t(item.periodKey)}
                   </PillBadge>
                   
@@ -80,7 +80,7 @@ export function Experience() {
                   <p className="text-slate-600 dark:text-slate-400 mb-2">{t(item.organizationKey)}</p>
                   
                   {item.descriptionKey && (
-                    <p className="text-slate-500 dark:text-slate-500 italic">{t(item.descriptionKey)}</p>
+                    <p className="text-slate-600 dark:text-slate-400 italic">{t(item.descriptionKey)}</p>
                   )}
                 </div>
               </div>
