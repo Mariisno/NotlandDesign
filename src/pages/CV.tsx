@@ -84,7 +84,7 @@ function CV() {
               {lang === 'no' ? (
                 <>
                   <li style={{marginBottom: 18}}>
-                    <span style={{background: 'rgba(233, 214, 245, 1)ff', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>2022 - 2024</span>
+                    <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>2022 - 2024</span>
                     <div style={{margin: '8px 0 0 0', fontWeight: 700, fontSize: '1.08em'}}>Bachelor, informatikk, design bruk og interaksjon</div>
                     <div style={{fontSize: '1em', color: '#222', marginBottom: 2}}>Universitetet i Oslo</div>
                     <hr style={{border: 0, borderTop: '1.5px solid #e6ede7', margin: '14px 0 0 0'}}/>
@@ -116,7 +116,7 @@ function CV() {
                     <hr style={{border: 0, borderTop: '1.5px solid #e6ede7', margin: '14px 0 0 0'}}/>
                   </li>
                   <li>
-                    <span style={{background: '#00ff00ff', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>2019 - 2020</span>
+                    <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>2019 - 2020</span>
                     <div style={{margin: '8px 0 0 0', fontWeight: 700, fontSize: '1.08em'}}>One-year study in Spanish, History and Philosophy</div>
                     <div style={{fontSize: '1em', color: '#222', marginBottom: 2}}>Universidad Internacional San Isidro Labrador<br/>Universidad Nacional de San Martín</div>
                   </li>
@@ -156,7 +156,7 @@ function CV() {
               <>
                 {/* UX Designer & Scrum Master */}
                 <div style={{marginBottom: 22}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>Juli 2024 - nå</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>UX Designer & Scrum Master</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Aibel AS</span>
@@ -169,7 +169,7 @@ function CV() {
                 </div>
                 {/* IT support technician */}
                 <div style={{marginBottom: 22}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>juli 2023 - mai 2024</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>IT support technician</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Advania</span>
@@ -206,7 +206,7 @@ function CV() {
               <>
                 {/* UX Designer & Scrum Master */}
                 <div style={{marginBottom: 22}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>July 2024 - present</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>UX Designer & Scrum Master</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Aibel AS</span>
@@ -219,7 +219,7 @@ function CV() {
                 </div>
                 {/* IT support technician */}
                 <div style={{marginBottom: 22}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>July 2023 - May 2024</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>IT support technician</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Advania</span>
@@ -233,7 +233,7 @@ function CV() {
                 <h2 style={{color: 'var(--accent-green)', fontSize: '1.1em', marginTop: 32, borderBottom: '1.5px solid #e6ede7', paddingBottom: 4, marginBottom: 18}}>Other experience</h2>
                 {/* Cafeteria worker */}
                 <div style={{marginBottom: 18}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>September 2021 - June 2022</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>Cafeteria worker</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Sit-Kafé</span>
@@ -241,7 +241,7 @@ function CV() {
                 </div>
                 {/* Care assistant */}
                 <div style={{marginBottom: 18}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>September 2021 - June 2022</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>Care assistant</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Nordre Follo Municipality</span>
@@ -249,7 +249,7 @@ function CV() {
                 </div>
                 {/* Kindergarten substitute */}
                 <div>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 2}}>
+                  <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 10, marginBottom: 2}}>
                     <span style={{background: '#d6f5d6', borderRadius: 6, padding: '0.2em 0.9em', fontSize: '1em', color: '#355c47', fontWeight: 500, display: 'inline-block'}}>June 2021 - July 2022 & June 2018 - July 2018</span>
                     <span style={{fontWeight: 700, fontSize: '1.08em', marginLeft: 0}}>Kindergarten substitute</span>
                     <span style={{fontSize: '1em', color: '#222', fontWeight: 400, marginLeft: 8}}>Nordre Follo Municipality</span>

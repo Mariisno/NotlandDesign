@@ -19,6 +19,29 @@ const flagStyle = {
 
 function Layout() {
   const [lang, setLang] = useState('en');
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  const langButtons = (
+    <>
+      <button
+        aria-label="Switch to English"
+        className={`icon-btn${lang === 'en' ? ' active' : ''}`}
+        onClick={() => { setLang('en'); closeMenu(); }}
+      >
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag" style={flagStyle} /> EN
+      </button>
+      <button
+        aria-label="Bytt til norsk"
+        className={`icon-btn${lang === 'no' ? ' active' : ''}`}
+        onClick={() => { setLang('no'); closeMenu(); }}
+      >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk flagg" style={flagStyle} /> NO
+      </button>
+    </>
+  );
+
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       <header className="header header-bar">
@@ -27,6 +50,7 @@ function Layout() {
             className="logo-title"
             style={{cursor: 'pointer', userSelect: 'none', margin: 0, marginRight: 'auto'}}
             onClick={() => {
+              closeMenu();
               const container = document.getElementById('flower-animation-container');
               if (!container) return;
               for (let i = 0; i < 12; i++) {
@@ -53,30 +77,46 @@ function Layout() {
           >
             NotlandDesign
           </h1>
-          <nav className="main-nav">
+
+          {/* Desktop nav */}
+          <nav className="main-nav desktop-nav">
             <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
             <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About Me</NavLink>
             <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>Projects</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
             <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''}>CV</NavLink>
           </nav>
-          <div className="lang-switcher" style={{display: 'flex', alignItems: 'center', gap: '0.7em', marginLeft: 'auto'}}>
-            <button
-              aria-label="Switch to English"
-              className={`icon-btn${lang === 'en' ? ' active' : ''}`}
-              onClick={() => setLang('en')}
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag" style={flagStyle} /> EN
-            </button>
-            <button
-              aria-label="Bytt til norsk"
-              className={`icon-btn${lang === 'no' ? ' active' : ''}`}
-              onClick={() => setLang('no')}
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk flagg" style={flagStyle} /> NO
-            </button>
+
+          {/* Desktop lang switcher */}
+          <div className="lang-switcher desktop-lang" style={{display: 'flex', alignItems: 'center', gap: '0.7em', marginLeft: 'auto'}}>
+            {langButtons}
           </div>
+
+          {/* Hamburger button (mobile only) */}
+          <button
+            className="hamburger-btn"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen(v => !v)}
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <nav className="mobile-menu">
+            <div className="mobile-nav">
+              <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>Home</NavLink>
+              <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>About Me</NavLink>
+              <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>Projects</NavLink>
+              <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>Contact</NavLink>
+              <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>CV</NavLink>
+            </div>
+            <div className="mobile-lang">
+              {langButtons}
+            </div>
+          </nav>
+        )}
       </header>
       <div id="flower-animation-container" style={{position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', pointerEvents: 'none', zIndex: 999}}></div>
       <main>
