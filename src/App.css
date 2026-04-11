@@ -210,6 +210,192 @@ html, body {
   color: #2d2d2d;
   text-align: left;
 }
+/* ── App cards (Projects page) ──────────────────────────────────────────── */
+.apps-section {
+  max-width: 860px;
+}
+
+.apps-intro {
+  color: #666;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+}
+
+.app-card {
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow 0.2s, transform 0.15s;
+  padding: 1.6em 1.8em 2.4em 1.8em;
+  min-width: 340px;
+}
+
+.app-card:hover {
+  box-shadow: 0 6px 24px 0 #b7c8b566;
+  transform: translateY(-2px);
+  border-color: var(--accent-green);
+}
+
+.app-card--expanded {
+  border-color: var(--accent-green);
+  box-shadow: 0 4px 20px 0 #b7c8b566;
+}
+
+.app-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  margin-bottom: 0.5em;
+  flex-wrap: wrap;
+}
+
+.app-name {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--accent-green-dark);
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25em 0.75em;
+  border-radius: 2em;
+  white-space: nowrap;
+}
+
+.status-badge--in-development {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.status-badge--beta {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.status-badge--live {
+  background: var(--accent-green);
+  color: #fff;
+  border: 1px solid var(--accent-green-dark);
+}
+
+.status-badge--coming-soon {
+  background: var(--accent-green-light);
+  color: var(--accent-green-dark);
+  border: 1px solid var(--border-main);
+}
+
+.app-tagline {
+  margin: 0 0 0.5em 0;
+  color: #555;
+  font-size: 0.97em;
+  line-height: 1.45;
+}
+
+.app-last-updated {
+  margin: 0;
+  font-size: 0.82em;
+  color: #999;
+}
+
+.app-last-updated span {
+  color: var(--accent-green-dark);
+  font-weight: 500;
+}
+
+.app-expand-hint {
+  position: absolute;
+  bottom: 0.9em;
+  right: 1.2em;
+  font-size: 0.7em;
+  color: var(--accent-green);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.app-card-details {
+  margin-top: 1.2em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--accent-green-light);
+}
+
+.app-description {
+  margin: 0 0 1em 0;
+  color: #444;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+
+.app-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 1.2em;
+}
+
+.tech-tag {
+  background: var(--accent-green-light);
+  color: var(--accent-green-dark);
+  border: 1px solid var(--border-main);
+  font-size: 0.75em;
+  padding: 0.2em 0.65em;
+  border-radius: 1em;
+  font-weight: 500;
+}
+
+.app-updates h4 {
+  margin: 0 0 0.6em 0;
+  font-size: 0.88em;
+  color: var(--accent-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.updates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.update-item {
+  display: flex;
+  gap: 0.8em;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+.update-date {
+  color: #999;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 6.5em;
+}
+
+.update-msg {
+  color: #555;
+}
+
+/* ── Mobile tweaks for app cards ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .app-card {
+    min-width: unset;
+    width: 100%;
+    padding: 1.3em 1.3em 2.2em 1.3em;
+  }
+
+  .update-item {
+    flex-direction: column;
+    gap: 0.1em;
+  }
+}
+
 .footer {
   margin-top: 3em;
   padding: 1.5em 0 0.5em 0;

@@ -1,0 +1,146 @@
+{
+  "notlanddesign": [
+    {
+      "date": "2026-03-28",
+      "message": "Fix mobile responsiveness: hamburger nav, overflow, CV wrapping"
+    },
+    {
+      "date": "2025-08-14",
+      "message": "Update header layout and add flower animation effect on logo click"
+    },
+    {
+      "date": "2025-08-14",
+      "message": "Add favicon and create initial CV pages for Education, Experience, Positions, and Skills"
+    },
+    {
+      "date": "2025-08-14",
+      "message": "Add routing and language context; implement pages for About, Projects, Contact, and CV"
+    }
+  ],
+  "grow": [
+    {
+      "date": "2026-03-28",
+      "message": "Add Goals, Stats page, habit dashboard widget, and persistent search"
+    },
+    {
+      "date": "2026-03-28",
+      "message": "Add habit tracking, weekly review, and keyboard shortcut"
+    },
+    {
+      "date": "2026-03-28",
+      "message": "Add PWA support, streak in sidebar, inline delete confirmation"
+    },
+    {
+      "date": "2026-03-28",
+      "message": "Add dark mode, search, and persistent login"
+    },
+    {
+      "date": "2026-03-28",
+      "message": "Add initial app structure with Supabase auth"
+    }
+  ],
+  "knito": [
+    {
+      "date": "2026-04-11",
+      "message": "Add .mcp.json configuration"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Fix password reset: wait for auth state change instead of getSession race condition"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Add autoComplete attributes to login form for password manager support"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Fix blank page: move showPasswordReset state to App component scope"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Add vercel.json with build output dir and SPA rewrites"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Update gitignore"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Remove Claude files from repo, keep local only"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Fix password reset flow and add gitignore"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Add recipe library design spec"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Add needle inventory design spec"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Refactor code structure for improved readability and maintainability"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Update ProjectList component to improve layout of sort controls"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Fix login blocked by undeployed Edge Function endpoints"
+    },
+    {
+      "date": "2026-03-29",
+      "message": "Add Oppskrifter and Verktøy tabs"
+    },
+    {
+      "date": "2025-11-16",
+      "message": "Update files from Figma Make"
+    },
+    {
+      "date": "2025-11-16",
+      "message": "Add files from Figma Make"
+    },
+    {
+      "date": "2025-11-16",
+      "message": "Initial commit"
+    }
+  ],
+  "idabook": [
+    {
+      "date": "2026-04-11",
+      "message": "Update App.tsx and add project configuration"
+    },
+    {
+      "date": "2026-03-22",
+      "message": "Fix UI: use translation system and remove debug button"
+    },
+    {
+      "date": "2025-11-09",
+      "message": "Update files from Figma Make"
+    },
+    {
+      "date": "2025-11-09",
+      "message": "Update README.md"
+    },
+    {
+      "date": "2025-11-08",
+      "message": "Update files from Figma Make"
+    },
+    {
+      "date": "2025-11-06",
+      "message": "Update files from Figma Make"
+    },
+    {
+      "date": "2025-11-05",
+      "message": "Add files from Figma Make"
+    },
+    {
+      "date": "2025-11-05",
+      "message": "Initial commit"
+    }
+  ]
+}
